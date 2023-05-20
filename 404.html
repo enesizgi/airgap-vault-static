@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <title>AirGap Vault</title>
+
+    <base href="/airgap-vault-static/">
+
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- default-src should be 'none', but to be compatible with older webview versions, we have to be permissive -->
+    <!-- script-src needs 'unsafe-eval' because of web3 -->
+    <!-- connect-src needs data: because because of libsodium -->
+    <!-- child-src needs blob: because worker-src is unknown in safari -->
+    <!-- style-src needs 'unsafe-inline' because we have inline css on the generate screen -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self' 'unsafe-eval' 'unsafe-inline' blob: data:; 
+        script-src 'self' 'unsafe-eval' 'unsafe-inline';
+        connect-src 'self' data:;
+        child-src blob:;
+        object-src 'none';
+        font-src 'self' data:;
+        img-src 'self' data:;
+        worker-src blob:;
+        style-src 'self' 'unsafe-inline';
+      ">
+
+    <link rel="icon" type="image/png" href="assets/icon/favicon.png">
+
+    <!-- add to homescreen for ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- check if app has loaded after x seconds. If not, error alert is shown. -->
+    <script src="assets/js/error-check.js"></script>
+  <style>:root{--ion-color-primary:#8874fc;--ion-color-primary-rgb:127, 108, 237;--ion-color-primary-contrast:#ffffff;--ion-color-primary-contrast-rgb:255, 255, 255;--ion-color-primary-shade:#6658ed;--ion-color-primary-tint:#9b9bff;--ion-color-secondary:#311b58;--ion-color-secondary-rgb:49, 27, 88;--ion-color-secondary-contrast:#ffffff;--ion-color-secondary-contrast-rgb:255, 255, 255;--ion-color-secondary-shade:#2b184d;--ion-color-secondary-tint:#463269;--ion-color-tertiary:#50239f;--ion-color-tertiary-rgb:80, 35, 159;--ion-color-tertiary-contrast:#ffffff;--ion-color-tertiary-contrast-rgb:255, 255, 255;--ion-color-tertiary-shade:#633ce0;--ion-color-tertiary-tint:#7e57ff;--ion-color-success:#10dc60;--ion-color-success-rgb:16, 220, 96;--ion-color-success-contrast:#ffffff;--ion-color-success-contrast-rgb:255, 255, 255;--ion-color-success-shade:#0ec254;--ion-color-success-tint:#28e070;--ion-color-warning:#ffce00;--ion-color-warning-rgb:255, 206, 0;--ion-color-warning-contrast:#ffffff;--ion-color-warning-contrast-rgb:255, 255, 255;--ion-color-warning-shade:#e0b500;--ion-color-warning-tint:#ffd31a;--ion-color-danger:#f53d3d;--ion-color-danger-rgb:245, 61, 61;--ion-color-danger-contrast:#ffffff;--ion-color-danger-contrast-rgb:255, 255, 255;--ion-color-danger-shade:#d83636;--ion-color-danger-tint:#f65050;--ion-color-dark:#222222;--ion-color-dark-rgb:34, 34, 34;--ion-color-dark-contrast:#ffffff;--ion-color-dark-contrast-rgb:255, 255, 255;--ion-color-dark-shade:#1e1e1e;--ion-color-dark-tint:#383838;--ion-color-medium:#989aa2;--ion-color-medium-rgb:152, 154, 162;--ion-color-medium-contrast:#ffffff;--ion-color-medium-contrast-rgb:255, 255, 255;--ion-color-medium-shade:#86888f;--ion-color-medium-tint:#a2a4ab;--ion-color-light:#f4f4f4;--ion-color-light-rgb:244, 244, 244;--ion-color-light-contrast:#000000;--ion-color-light-contrast-rgb:0, 0, 0;--ion-color-light-shade:#d7d7d7;--ion-color-light-tint:#f5f5f5;--ion-color-grayLight:#f4f4f4;--ion-color-grayLight-rgb:244, 244, 244;--ion-color-grayLight-contrast:#000000;--ion-color-grayLight-contrast-rgb:255, 255, 255;--ion-color-grayLight-shade:#d7d7d7;--ion-color-grayLight-tint:#f5f5f5}html{--ion-font-family:var(--ion-default-font)}body{background:var(--ion-background-color)}@supports (padding-top: 20px){html{--ion-safe-area-top:var(--ion-statusbar-padding)}}@supports (padding-top: constant(safe-area-inset-top)){html{--ion-safe-area-top:constant(safe-area-inset-top);--ion-safe-area-bottom:constant(safe-area-inset-bottom);--ion-safe-area-left:constant(safe-area-inset-left);--ion-safe-area-right:constant(safe-area-inset-right)}}@supports (padding-top: env(safe-area-inset-top)){html{--ion-safe-area-top:env(safe-area-inset-top);--ion-safe-area-bottom:env(safe-area-inset-bottom);--ion-safe-area-left:env(safe-area-inset-left);--ion-safe-area-right:env(safe-area-inset-right)}}*{box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}html{width:100%;height:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%}html:not(.hydrated) body{display:none}body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;margin:0;padding:0;position:fixed;width:100%;max-width:100%;height:100%;max-height:100%;transform:translateZ(0);text-rendering:optimizeLegibility;overflow:hidden;touch-action:manipulation;-webkit-user-drag:none;-ms-content-zooming:none;word-wrap:break-word;overscroll-behavior-y:none;-webkit-text-size-adjust:none;text-size-adjust:none}html{font-family:var(--ion-font-family)}@charset "UTF-8"</style><link rel="stylesheet" href="styles.8e6c3a7f5b1bda8d.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.8e6c3a7f5b1bda8d.css"></noscript></head>
+
+  <body>
+    <airgap-root></airgap-root>
+  <script src="runtime.1b43d852bd0dec36.js" type="module"></script><script src="polyfills.6d579392d4f68cad.js" type="module"></script><script src="main.c5f34d8cb1a535af.js" type="module"></script>
+
+</body></html>
